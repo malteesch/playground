@@ -1,7 +1,3 @@
-plugins {
-    kotlin("jvm")
-}
-
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-scripting-common")
     implementation("org.jetbrains.kotlin:kotlin-scripting-jvm")
