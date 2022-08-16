@@ -9,3 +9,6 @@
  */
 
 rootProject.name = "playground"
+include("kotlin-scripting")
+include("kotlin-scripting:script-definition")
+include("kotlin-scripting:scripting-host")
