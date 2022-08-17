@@ -2,6 +2,7 @@ rootProject.name = "playground"
 include("kotlin-scripting")
 include("kotlin-scripting:script-definition")
 include("kotlin-scripting:scripting-host")
+include("ktor-playground")
 
 dependencyResolutionManagement {
     versionCatalogs {
@@ -14,7 +15,12 @@ dependencyResolutionManagement {
             library("kotlin-scripting-jvm-host", "org.jetbrains.kotlin", "kotlin-scripting-jvm-host").versionRef(kotlin)
             library("kotlin-scripting-dependencies", "org.jetbrains.kotlin", "kotlin-scripting-dependencies").versionRef(kotlin)
             library("kotlin-scripting-dependencies-maven", "org.jetbrains.kotlin", "kotlin-scripting-dependencies-maven").versionRef(kotlin)
+
             library("kotlinx-coroutines", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version("1.6.4")
+
+            val ktor = version("ktor", "2.1.0")
+            library("ktor-server", "io.ktor", "ktor-server-core").versionRef(ktor)
+            library("ktor-server-netty", "io.ktor", "ktor-server-netty").versionRef(ktor)
         }
 
         create("testLibs") {
