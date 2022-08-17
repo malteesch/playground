@@ -1,7 +1,7 @@
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-scripting-common")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host")
+    implementation(libs.kotlin.scripting)
+    implementation(libs.kotlin.scripting.jvm)
+    implementation(libs.kotlin.scripting.jvm.host)
     implementation(project(":kotlin-scripting:script-definition")) // the script definition module
 }
 

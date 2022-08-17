@@ -1,10 +1,10 @@
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-scripting-common")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-dependencies")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-dependencies-maven")
+    implementation(libs.kotlin.scripting)
+    implementation(libs.kotlin.scripting.jvm)
+    implementation(libs.kotlin.scripting.dependencies)
+    implementation(libs.kotlin.scripting.dependencies.maven)
     // coroutines dependency is required for this particular definition
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation(libs.kotlinx.coroutines)
     runtimeOnly("org.slf4j:slf4j-nop:1.7.36")
 }
 
