@@ -13,7 +13,7 @@ fun main(vararg args: String) {
     val scriptFile = File(args[0])
         println("Executing script $scriptFile")
 
-        val res = evalFile(scriptFile)
+        val res = evalCode(scriptFile.readText())
 
         res.reports.forEach {
             if (it.severity > ScriptDiagnostic.Severity.DEBUG) {
@@ -23,7 +23,7 @@ fun main(vararg args: String) {
     }
 }
 
-fun evalFile(scriptFile: File): ResultWithDiagnostics<EvaluationResult> {
+fun evalCode(code: String): ResultWithDiagnostics<EvaluationResult> {
     val compilationConfiguration = createJvmCompilationConfigurationFromTemplate<ScriptWithMavenDeps>()
-    return BasicJvmScriptingHost().eval(scriptFile.toScriptSource(), compilationConfiguration, null)
+    return BasicJvmScriptingHost().eval(code.toScriptSource(), compilationConfiguration, null)
 }

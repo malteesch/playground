@@ -15,10 +15,11 @@ subprojects {
 
 dependencies {
     implementation(project(":kotlin-scripting:scripting-host"))
+    testImplementation(testLibs.kotest.framework)
+    testImplementation(testLibs.kotest.assertions)
+    testImplementation(libs.kotlin.scripting)
 }
 
-val runTestScript by tasks.registering(JavaExec::class) {
-    classpath = configurations["runtimeClasspath"]
-    mainClass.set("HostKt")
-    args = listOf(file("${projectDir}/html.scriptWithDeps.kts").absolutePath)
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }
